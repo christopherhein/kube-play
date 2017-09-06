@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: laptimes
+  labels:
+    app: laptimes
+spec:
+  selector:
+    app: laptimes
+  ports:
+  - port: 5000
+
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: laptimes
+  labels:
+    app: laptimes
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: laptimes
+    spec:
+      containers:
+      - name: laptimes
+        image: christopherhein/mx-laptimes
+        ports:
+        - containerPort: 5000

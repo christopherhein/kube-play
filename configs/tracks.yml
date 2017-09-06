@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tracks
+  labels:
+    app: tracks
+spec:
+  selector:
+    app: tracks
+  ports:
+  - port: 4567
+
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tracks
+  labels:
+    app: tracks
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: tracks
+    spec:
+      containers:
+      - name: tracks
+        image: christopherhein/mx-tracks
+        ports:
+        - containerPort: 4567
