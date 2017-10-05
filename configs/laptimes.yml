@@ -27,5 +27,12 @@ spec:
       containers:
       - name: laptimes
         image: christopherhein/mx-laptimes
+        # resources:
+        #   limits:
+        #     cpu: 1024m
+        #     memory: 1024M
+        #   requests:
+        #     cpu: 512m
+        #     memory: 512M
         ports:
         - containerPort: 5000

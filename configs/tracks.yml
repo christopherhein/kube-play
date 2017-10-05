@@ -27,5 +27,12 @@ spec:
       containers:
       - name: tracks
         image: christopherhein/mx-tracks
+        # resources:
+        #   limits:
+        #     cpu: 1024m
+        #     memory: 1024M
+        #   requests:
+        #     cpu: 512m
+        #     memory: 512M
         ports:
         - containerPort: 4567

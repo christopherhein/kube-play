@@ -33,6 +33,13 @@ spec:
       containers:
       - name: webapp
         image: christopherhein/mx-webapp
+        # resources:
+        #   limits:
+        #     cpu: 1024m
+        #     memory: 1024M
+        #   requests:
+        #     cpu: 512m
+        #     memory: 512M
         ports:
         - name: http-server
           containerPort: 8080
